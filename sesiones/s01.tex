@@ -1,0 +1,23 @@
+\begin{exercise}\label{ex:1.1}
+  {\bf Ejercicio 1.1.i}
+
+  {\bf (i)} Consideramos un morfismo $f \colon x \rightarrow y$. Demuestra que si existe un par de morfismos $g,h \colon \rightrightarrows x$ tal que $gf=\id{x}$ y $fh=\id{y}$,
+  consecuentemente $g=h$ y $f$ es un isomorfismo.
+
+
+  $f\colon x \to y$, $g\colon y \to x$, $h\colon y \to x$; $gf=\id{x}$, $fh=\id{y}$.
+
+  \[
+  gfh = g \left(fh\right)=g \id{y} = \left(gf\right)h = \id{x}h \To g=h
+  \]
+
+  Por tanto $fh=\id{y}$ y $hf=\id{x}$ de esta forma $f$ es isomorfismo.
+
+  {\bf (ii)} Demuestra que un morfismo como máximo puede tener un único morfismo inverso.
+
+  Dado $f\colon x \to y$, un par de isomorfismos que invierten $f$ son dos morfismos $g_1,g_2\colon y \to x$ tal que $g_1f=g_2f=\id{x}$ y existan 
+  $h_1,h_2 \colon x \to y$ tal que $g_1h_1=g_2h_2=\id{x}$ y $h_1g_1=h_2g_2=\id{y}$.
+
+  Por tanto, aplicando {\bf (i)} obtenemos $h_1=f=h_2$ y como $g_1f=\id{x}$, $fg_2=\id{y}$ tenemos que $g_1=g_2$.
+
+\end{exercise}
