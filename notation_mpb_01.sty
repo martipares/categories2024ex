@@ -1,0 +1,190 @@
+%version 1.4
+\ProvidesPackage{notation_mpb_01}
+
+% fonts
+\newcommand{\cat}[1]{\textup{\textsf{#1}}}% for categories
+\newcommand{\ucat}[1]{\underline{\textsf{#1}}}% for enriched categories
+\newcommand{\vcat}[1]{{{#1}\text{-}\cat{Cat}}}% for categories enriched in something
+\newcommand{\fun}[1]{\textup{#1}}%for functors
+\newcommand{\oper}[1]{\textsc{#1}}% for operads
+\newcommand{\mr}[1]{\mathrm{#1}}% for everything else
+
+\newcommand{\bbefamily}{\fontencoding{U}\fontfamily{bbold}\selectfont}
+\newcommand{\textbbe}[1]{{\bbefamily #1}}
+\DeclareMathAlphabet{\mathbbe}{U}{bbold}{m}{n}
+
+\renewcommand{\theenumi}{\roman{enumi}}
+\newenvironment{myindentpar}[1]
+{\begin{list}{}
+         {\setlength{\leftmargin}{#1}}
+         \item[]
+}
+{\end{list}}
+
+
+\newcommand{\Cat}[1]{\mathscr{#1}}      % Arbitrary category
+\newcommand{\scat}[1]{\mathbf{#1}}      % Arbitrary small category
+\newcommand{\fcat}[1]{\mathbf{#1}}      % Typeface for fixed categories
+
+\newcommand{\ovln}[1]{\overline{#1}}
+\newcommand{\lwr}[1]{\mathbf{#1}}       % \lwr{n} denotes n-element set
+\newcommand{\rreg}[1]{\underline{#1}}   % Regular representation
+\newcommand{\ynt}[1]{\tilde{#1}}        % Nat transf in Yoneda lemma
+\newcommand{\yel}[1]{\hat{#1}}          % Element in Yoneda lemma
+\newcommand{\wideyel}[1]{\widehat{#1}}  % Wide version of \yel
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%==>Yoneda lemma
+
+% tamany fix per la constatn kex
+\font\maljapanese=dmjhira at 2.6ex % you can change this "2ex" value
+\def\yo{\textrm{\maljapanese\char"48}}
+
+% tamany automtic
+% nlab https://ncatlab.org/nlab/show/Yoneda+embedding#ReferencesNotation
+\DeclareFontFamily{U}{min}{}
+\DeclareFontShape{U}{min}{m}{n}{<-> udmj30}{}
+\newcommand\Yo{\!\text{\usefont{U}{min}{m}{n}\symbol{'207}}\!}
+
+%\newcommand\japanese{\fontspec{Harano Aji Mincho}}
+% for yoneda - this is the Unicode character "HIRAGANA LETTER YO" (よねだ).
+%\newcommand{\yo}{\text{\japanese よ}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% rotacio de simbols
+
+\newcommand{\veq}{\mathrel{\rotatebox{90}{$=$}}}
+\newcommand{\vsimeq}{\mathrel{\rotatebox{270}{$\simeq$}}}
+
+%Idenetity
+%\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Id}[1]{\mathrm{Id}_{#1}}
+%\newcommand{\id}{\mathrm{id}}
+\newcommand{\id}[1]{\cat{1}_{#1}}
+
+
+%arrows
+\newcommand{\fto}{\twoheadrightarrow}
+\newcommand{\cto}{\rightarrowtail}
+\newcommand{\wto}{\xrightarrow{{\smash{\mathlower{0.8}{\sim}}}}}
+%\newcommand{\wto}{\xrightarrow{\mkern10mu{\smash{\mathlower{0.6}{\sim}}}\mkern10mu}}
+%\newcommand{\cwto}{\xhookrightarrow{{\smash{\mathlower{0.6}{\sim}}}}}
+\newcommand{\cwto}{\tailxrightarrow{{\smash{\mathlower{0.8}{\sim}}}}}
+\newcommand{\fwto}{\dhxrightarrow{{\smash{\mathlower{0.8}{\sim}}}}}
+
+\makeatletter
+\def\makeslashed#1#2#3#4#5{#1{\mathpalette{\sla@{#2}{#3}{#4}}{#5}}}
+
+\def\@mathlower#1#2#3{\setbox0=\hbox{$\m@th#2#3$}\lower#1\ht0\box0}
+\def\mathlower#1#2{\mathpalette{\@mathlower{#1}}{#2}}
+\makeatother
+
+\newcommand\dhxrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\rightarrow\mkern4mu$}}
+}
+
+\newcommand\tailxrightarrow[2][]{%
+  \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+  \hidewidth$\Yright\mkern14mu$}}
+}
+
+
+%restirc
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \littletaller % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+  }}
+
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%notation
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\co}{\mathrm{co}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\mor}{\mathrm{mor}}
+\newcommand{\Mor}[2]{\operatorname{\mathrm{Mor}}_{#1}\left(#2\right)}
+\newcommand{\map}{\mathrm{map}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\incl}{\mathrm{incl}}
+\newcommand{\dom}[1]{\operatorname{\mathrm{dom}}{#1}}
+\newcommand{\cod}[1]{\operatorname{\mathrm{cod}}{#1}}
+\newcommand{\colim}{\mathrm{colim}}
+\newcommand{\hocolim}{\mathrm{hocolim}}
+\newcommand{\wcolim}{\mathrm{wcolim}}
+\newcommand{\holim}{\mathrm{holim}}
+
+%named categories
+\newcommand{\Set}{\cat{Set}}
+\newcommand{\Sets}{\cat{Sets}}
+\newcommand{\Top}{\cat{Top}}
+\newcommand{\sSet}{\cat{sSet}}
+\newcommand{\sSets}{\cat{sSets}}
+\newcommand{\Group}{\cat{Group}}
+\newcommand{\fVectR}{\cat{FinVect}_\mathbb{R}}
+\newcommand{\Vect}[1]{\cat{Vect}_{#1}}
+\newcommand{\TTop}{\mathbb{T}\cat{op}}
+\newcommand{\Kan}{\mathbb{K}\cat{an}}
+\newcommand{\Space}{\mathbb{S}\cat{pace}}
+\newcommand{\qCat}{\mathbb{Q}\cat{cat}}
+\newcommand{\Mnd}{\mathbb{M}\cat{nd}}
+\newcommand{\Adj}{\mathbb{A}\cat{dj}}
+\newcommand{\cCat}{\mathbb{C}\cat{at}}
+\newcommand{\hSpace}{\cat{h}\Space}
+\newcommand{\csSet}{\cat{s}\mathbb{S}\cat{et}}
+\newcommand{\CAT}{\mathsf{CAT}}
+\newcommand{\ooCAT}{\infty\text{-}\mathsf{CAT}}
+
+%mathrm
+\newcommand{\coh}{\mathrm{coh}}
+\newcommand{\Map}{\mathrm{Map}}
+\newcommand{\Fun}{\mathrm{Fun}}
+\newcommand{\Ho}{\cat{Ho}}
+\newcommand{\sk}{\mathrm{sk}}
+
+
+% command per el TFG
+
+% Finite Ordered Sets
+\newcommand{\FSet}[1]{\boldsymbol{ #1 }}
+\newcommand{\DDelta}{\mathbf{\Delta}}
+%\newcommand{\DDelta}{\mathbbe{\Delta}}
+
+% simplicial Complex
+\newcommand{\sCom}{\cat{sComplex}}
+\newcommand{\av}{\fun{av}}
+\newcommand{\sComK}[1]{\left(V_{#1},S_{#1}\right)}
+\newcommand{\nSimp}[1]{\DDelta^{\FSet{#1}}}
+\newcommand{\nCom}[1]{\left|\DDelta^{\FSet{#1}}\right|}
+
+%functor realitzacio geometrica
+\newcommand{\realGeo}[1]{\left| \fun{ {\bf-} } \right|_{#1}}
+\newcommand{\nervi}[1]{\cat{N}\cat{C}_{#1}}
+\newcommand{\sing}[1]{\fun{Sing}\left(#1\right)}
+\newcommand{\Cone}[1]{\cat{Con}\left(-,#1\right)}
+\newcommand{\Cocone}[1]{\cat{Con}\left(#1,-\right)}
+\newcommand{\Hom}[2]{\mathord{\text{\normalfont{\textsf{Hom}}}}_{#1}\left(#2\right)}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\newcommand{\dom}{\mathrmdef{dom}}
+%\newcommand{\cod}{\mathrmdef{cod}}
+%\newcommand{\Hom}{\mathrm{Hom}}

@@ -1,0 +1,70 @@
+%version 1.4
+\ProvidesPackage{environments_mpb_01}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+
+%%%%=>en
+
+%
+% \newtheorem{thm}{Theorem}[section]
+% \newtheorem{lem}[thm]{Lemma}
+% \newtheorem{prop}[thm]{Proposition}
+% \newtheorem{cor}[thm]{Corollary}
+%
+% \theoremstyle{definition}
+% \newtheorem{defn}[thm]{Definition}
+% \newtheorem{ex}[thm]{Example}
+% \newtheorem{nt}[thm]{Notation}
+%
+%
+% \theoremstyle{remark}
+% \newtheorem{rmk}[thm]{Remark}
+% \newtheorem{exc}[thm]{Exercise}
+% \newtheorem{dig}[thm]{Digression}
+
+
+%%%%=>cat
+
+
+%\newtheorem{theorem}{Teorema}[subsection]
+%\newtheorem{lemma}[theorem]{Lema}
+%\newtheorem{proposition}[theorem]{Proposició}
+%\newtheorem{corollary}[theorem]{Corol·lari}
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definició}
+%\newtheorem{example}[theorem]{Exemple}
+%\newtheorem{notation}[theorem]{Notació}
+%\newtheorem*{acknowledgements}{Agraïments}
+%
+%
+%\theoremstyle{remark}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{exercise}[theorem]{Exercici}
+
+
+
+%%%%=>es
+
+
+\newtheorem{theorem}{Teorema}[subsection]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{notation}[theorem]{Notación}
+\newtheorem*{acknowledgements}{Agradecimientos}
+
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observación}
+
+%\g@addto@macro\th@Eje{\thm@headpunct{ }}
+\newtheorem*{Ej}{Ejercicio}
+

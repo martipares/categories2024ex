@@ -1,23 +1,30 @@
-\begin{exercise}\label{ex:1.1}
-  {\bf Ejercicio 1.1.i}
+Lectura recomendada: Secciones 1.1, 1.2, 1.3 de [R16].
 
-  {\bf (i)} Consideramos un morfismo $f \colon x \rightarrow y$. Demuestra que si existe un par de morfismos $g,h \colon \rightrightarrows x$ tal que $gf=\id{x}$ y $fh=\id{y}$,
-  consecuentemente $g=h$ y $f$ es un isomorfismo.
+Lista de ejercicios: 1.1.i, 1.1.ii, 1.1.iii (i), 1.2.ii, 1.2.iii, 1.2.iv, 1.2.v, 1.3.i, 1.3.ii, 1.3.iii, 1.3.viii, 1.3.ix, 1.3.x.
+
+{\bf Soluciones: }\footnote{Soluciones proporcionadas por Alejandro García}
+
+\begin{Ej}\label{ej:1.1.i}
+   1.1.i
 
 
-  $f\colon x \to y$, $g\colon y \to x$, $h\colon y \to x$; $gf=\id{x}$, $fh=\id{y}$.
+   {\bf (i)} Consideramos un morfismo $f \colon x \rightarrow y$. Demuestra que si existe un par de morfismos $g,h \colon \rightrightarrows x$ tal que $gf=\id{x}$ y $fh=\id{y}$,  consecuentemente $g=h$ y $f$ es un isomorfismo.
 
-  \[
-  gfh = g \left(fh\right)=g \id{y} = \left(gf\right)h = \id{x}h \To g=h
-  \]
+   $f \colon x \rightarrow y$, $g \colon y \rightarrow x$, $h \colon y \rightarrow x$; $gf=\id{x}$, $fh=\id{y}$ 
 
-  Por tanto $fh=\id{y}$ y $hf=\id{x}$ de esta forma $f$ es isomorfismo.
+\begin{equation*}
+gfh = g \left( fh\right) = g \id{y} = \left(gf\right) h = \id{x}h \Rightarrow g=h
+\end{equation*}
 
-  {\bf (ii)} Demuestra que un morfismo como máximo puede tener un único morfismo inverso.
 
-  Dado $f\colon x \to y$, un par de isomorfismos que invierten $f$ son dos morfismos $g_1,g_2\colon y \to x$ tal que $g_1f=g_2f=\id{x}$ y existan 
-  $h_1,h_2 \colon x \to y$ tal que $g_1h_1=g_2h_2=\id{x}$ y $h_1g_1=h_2g_2=\id{y}$.
+  Por tanto $fh=\id{y}$ y $hf=\id{x}$ de esta forma $f$ es isomorfismo. 
+  
+  {\bf (ii)} Demuestra que un morfismo como máximo pude tener un único morfismo inverso.  
+
+  Dado $f \colon x \rightarrow y$, un par de isomorfismos que invierten $f$ son dos morfismos $g_1,g_2 \colon y \rightarrow x $ tal que $g_1f=g_2=id{x}$ y existan $h_1,h_2 \colon x \rightarrow y$ tal que $g_1 h_1=g_2h_2=\id{x}$ y $h_1g_1=h_2g_2=\id{y}$. 
 
   Por tanto, aplicando {\bf (i)} obtenemos $h_1=f=h_2$ y como $g_1f=\id{x}$, $fg_2=\id{y}$ tenemos que $g_1=g_2$.
 
-\end{exercise}
+
+
+\end{Ej}
