@@ -54,13 +54,17 @@ El consenso actual es usar よ par la subversión de Yoneda, están definidas do
 "operadores":
 
 \Mor{}{}
+
 \dom{}
+
 \cod{}
 
 Identidad:
 
 \Id{} 
+
 o 
+
 \id{}
 
 Notación útil:
@@ -70,15 +74,19 @@ Notación útil:
 Categorías:
 
 \Sets 
+
 \Top 
+
 \sSet
+
 \fVectR
+
 \Vect{}
 
 
 TFG:
 
-E añadido algunos instrucciones que utilice en mi TFG pude que no sea la notación que vamos a usar pero se pude adaptar.
+He añadido algunos instrucciones que utilice en mi TFG pude que no sea la notación que vamos a usar pero se pude adaptar.
 
 # Añadidos o Cambios en Notación:
 
