@@ -103,6 +103,22 @@ https://ctan.fisiquimicamente.com/graphics/pgf/contrib/tikz-cd/tikz-cd-doc.pdf
 
 Por cualquier duda o problema no duden en contactarme.
 
+# Recordatorio de LaTeX 
+
+En el siguiente enlace se encurta un reclinatorio de todos los símbolos (algunos requerirán de paquetes adicionales).
+https://ctan.fisiquimicamente.com/info/symbols/comprehensive/symbols-a4.pdf
+
+En esta sección se añadirán instrucciones útiles que necesitaremos con frecuencia.
+
+\rightrightarrows
+\leftleftarrows
+
+\leftrightarrows
+\rightleftarrows
+
+
+
+
 
 # Que programas uso:
 TeXLive 2024 (actualizado)
