@@ -55,6 +55,8 @@ El consenso actual es usar よ par la subversión de Yoneda, están definidas do
 
 "operadores":
 
+\restr{}{} 
+
 \Mor{}{}
 
 \dom{}
