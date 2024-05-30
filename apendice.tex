@@ -1,0 +1,75 @@
+
+
+%version 2.0
+\documentclass[12pt, a4paper]{article}
+%\documentclass[12pt]{article}
+
+
+\usepackage{preamble_mpb_02}
+\usepackage{environments_mpb_02}
+\usepackage{notation_mpb_02}
+\usepackage{import}
+
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\center
+\vspace*{\fill}
+
+\Large Universitat Aut\`onoma de Barcelona\\% Name of your university/college
+\Large y\\
+\Large Universidad de Málaga\\[1.5cm] % Name of your university/college
+\textsc{\Large Categorías 2024}\\[0.5cm] % Major heading such as course name
+
+\rule{\linewidth}{0.5mm} \\[0.4cm]
+{ \huge \bfseries Apéndice}\\[-0.8cm]
+\[
+\begin{tikzcd}
+\sing{X}_n \arrow[dd,shift right=2] \arrow[dd,shift right=4,"s_j"'near start,"-\circ S^j"' near end] \arrow[rr,"\sing{\varphi}_{n}","\varphi \circ -"swap]  & & 
+\sing{Y}_n \arrow[dd,shift right=2] \arrow[dd,shift right=4,"s_j"'near start,"-\circ S^j"' near end] \arrow[rr,"\sing{\theta}_{n}","\theta \circ -" swap] & & 
+\sing{Z}_n \arrow[dd,shift right=2] \arrow[dd,shift right=4,"s_j"'near start,"-\circ S^j"' near end] \\ 
+\\
+\sing{X}_{n+1} \arrow[uu] \arrow[uu, shift right=2] \arrow[uu, shift right=4,"d_i"'near end,"-\circ D^i"' near start] \arrow[rr,"\sing{\varphi}_{n+1}","\varphi \circ -"swap] & &
+\sing{Y}_{n+1} \arrow[uu] \arrow[uu, shift right=2] \arrow[uu, shift right=4,"d_i"'near end,"-\circ D^i"' near start] \arrow[rr,"\sing{\theta}_{n+1}","\theta \circ -" swap] & &
+\sing{Z}_{n+1} \arrow[uu] \arrow[uu, shift right=2] \arrow[uu, shift right=4,"d_i"'near end,"-\circ D^i"' near start] \\
+\end{tikzcd}
+\]
+\rule{\linewidth}{0.5mm} \\[1.5cm]
+
+ 
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Autor:}\\
+% % Your name
+%\end{flushleft}
+%\end{minipage}
+
+
+
+\vspace*{\fill}
+
+\includegraphics[scale=0.25]{Logo_UAB.png}
+
+\vspace*{\fill}
+
+\vspace*{\fill}
+
+\includegraphics[scale=0.25]{Logo_UMA.jpg}
+
+\vspace*{\fill}
+\end{titlepage}
+
+El {\bf Apéndice} esta pensado para poner a disposición de todos detalles técnicos o ampliaciones del contenido visto durante las sesiones.
+\newpage
+\section{Lema de Yoneda}
+
+\import{apendice/}{apen_01_yo.tex}
+
+
+
+
+
+\end{document}

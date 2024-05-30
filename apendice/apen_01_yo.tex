@@ -1,0 +1,207 @@
+Esta es la traducción del apartado dedicado al lema de Yoneda en mi TFG\footnote{Intrducció a les Categories de Models en Topologia (Martí Parés Baraldés) con Carles Broto Blanco como tutor} donde se demuestra la vercion contravariante del lema de Yoneda usando la sumersión de Yoneda. 
+
+\begin{definition}\label{def:diagCat}
+  Dada una categoría localmente pequeña $\mathsf{C}$. Definimos la categoría de diagramas $\Set^{\mathsf{C}}$ donde los objetos son functores de $\mathsf{C}$ a $\Set$ y los morfismos son transformaciones naturales de entre estos functores.
+\end{definition}
+
+
+\begin{definition}\label{def:Mor(-,c)}
+  Para un objeto $c \in \mathsf{C}$ definimos el {\bf functor representable contravariante} que es la forma contravariante del functor $\Mor{\mathsf{C}}{c,-}$.
+
+  \begin{equation*}
+    \begin{tikzcd}[row sep = -0.1 cm]
+    \Mor{\mathsf{C}}{-,c} \colon & \mathsf{C} \arrow[rrr] & & & \Set  \\
+    & d \arrow[rrr,mapsto] & & & \Mor{\mathsf{C}^{\op}}{d,c} \\
+    & g\colon e \rightarrow d \arrow[rrr,mapsto] & & & \Mor{\mathsf{C}^{\op}}{g,c}\colon \Mor{\mathsf{C}^\op}{s,c} \xrightarrow{-\circ g} \Mor{\mathsf{C}^\op}{e,c}
+  \end{tikzcd}
+  \end{equation*}
+
+  Para comprobar que es un functor, para $f\colon d \rightarrow c$ de $\Mor{\mathsf{C}^\op}{d,c}$ y $f\colon d \rightarrow c$ de $\mathsf{C}^\op$ podemos ver que $\Mor{\mathsf{C}^\op}{\Id{d},c}=\Id{\Mor{\mathsf{C}^\op}{d,c}}$ y $\Mor{\mathsf{C}^{\op}}{g \circ s,c}=\Mor{\mathsf{C}^{\op}}{s,c} \circ \Mor{\mathsf{C}^{\op}}{g,c}$.
+
+
+\begin{align*}
+  \Mor{\mathsf{C}^\op}{\Id{d},c}\left(f\right)  &= f\circ \Id{d} \\ 
+  &= f \\ 
+  &= \Id{\Mor{\mathsf{C}^\op}{d,c}}\left(f\right) \\ 
+  \Mor{\mathsf{C}^\op}{g\circ s, c}\left(f\right)  &= f\circ \left(g\circ s\right) \\ 
+    &= \left(f\circ g\right)\circ s \\ 
+  &=  \left(\Mor{\mathsf{C}^\op}{s,c}\circ \Mor{\mathsf{C}^\op}{g,c}\right)\left(f\right)
+\end{align*}
+
+\end{definition}
+
+
+\begin{definition}\label{def:Yo}
+  La {\bf sumersión de Yoneda} es un functor d'una categoría localmente pequeña $\mathsf{C}$ a la categoría de diagramas $\Set^{\mathsf{C}^\op}$.
+{\Huge \[
+\Yo \colon \mathsf{C} \rightarrow \Set^{\mathsf{C}^{\op}}
+\]}
+que envía un objeto $c$ al functor $\Mor{\mathsf{C}^\op}{-,c}$ (Definición \ref{def:Mor(-,c)})
+\[
+  \yo \left(c\right)=\Mor{\mathsf{C}^{\op}}{-,c} \colon \mathsf{C}^{\op} \rightarrow \Set
+\] 
+Y el morfismo $\xi \colon c \rightarrow c^{\prime}$ en $\mathsf{C}$ lo envía a la siguiente transformación natural,
+
+\[
+  \yo \left(\xi\right)= \Mor{\mathsf{C}}{-,\xi} \colon \Mor{\mathsf{C}}{-,c} \Rightarrow \Mor{\mathsf{C}}{-,c^{\prime}}
+\]
+tal que, por todo $g\colon e \rightarrow d$ en $\mathsf{C}^\op$ 
+
+\[
+ \begin{tikzcd}
+   \Mor{\mathsf{C}^{\op}}{d,c} \arrow[d,"-\circ g","\Mor{\mathsf{C}^{\op}}{g,c}"swap] \arrow[r,"\Yo\left(\xi\right)_d","\xi\circ -"swap] & \Mor{\mathsf{C}^{\op}}{d,c^{\prime}} \arrow[d,"-\circ g"swap,"\Mor{\mathsf{C}^{\op}}{g,c^{\prime}}"] \\
+   \Mor{\mathsf{C}^{\op}}{e,c} \arrow[r,"\Yo\left(\xi\right)_e","\xi\circ -"swap] & \Mor{\mathsf{C}^{\op}}{e,c^{\prime}} 
+ \end{tikzcd}
+ \]
+  es un diagrama conmutativo, cosa fácilmente comprobable ya que por todo $f\in\Mor{\mathsf{C}}{d,c}$ tenemos que $\left(\xi \circ f\right)\circ g = \xi \circ \left(f\circ g\right)$.
+\end{definition}
+
+
+\begin{theorem}\label{theo:Yo}
+  (Lema de Yoneda) Sea $\mathsf{C}$ una categoría localmente pequeña. Para cualquier objeto $c\in \mathsf{C}$ y functor $\textup{F}\in \Set^{\mathsf{C}^\op}$ tenemos un isomorfismo de conjuntos.
+
+{\Huge \[
+  \Mor{\Set^{\mathsf{C}^{\op}}}{\Yo\left(c\right),\textup{F}} \cong \textup{F}\left(c\right)
+\]}
+que es natural en $\textup{F}$ y en $c$ que se traduce en que por todo functor $\textup{G}\colon \mathsf{C}^\op \rightarrow \Set$, transformación natural $\alpha \colon \textup{F}\Rightarrow \textup{G}$ y morfismo $h\colon c \rightarrow d$ los siguientes diagramas son conmutativos.
+
+\begin{tikzcd}
+  \Mor{\Set^{\textup{\textsf{C}}^\op}}{\Yo\left(c\right),\textup{F}} \arrow[r, "\cong"] \arrow[d, "\Mor{}{\Yo\left(c\right),\alpha}"swap] & \textup{F}\left(c\right) \arrow[d, "\alpha_c"] \\
+  \Mor{\Set^{\textup{\textsf{C}}^\op}}{\Yo\left(c\right),\textup{G}} \arrow[r, "\cong"] & \textup{G}\left(c\right)
+\end{tikzcd}
+\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }\text{ }
+\begin{tikzcd}
+  \Mor{\Set^{\textup{\textsf{C}}^\op}}{\Yo\left(c\right),\textup{F}} \arrow[r, "\cong"] & \textup{F}\left(c\right) \\
+  \Mor{\Set^{\textup{\textsf{C}}^\op}}{\Yo\left(d\right),\textup{F}} \arrow[r, "\cong"] \arrow[u, "\Mor{}{\Yo\left(h\right),\textup{F}}"] & \textup{F}\left(d\right) \arrow[u, "\textup{F}\left(d\right)"swap]
+\end{tikzcd}
+
+\begin{proof}
+
+  Definimos una aplicación $\Phi_{c,\fun{F}}$ de $\Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}}$ a $\fun{F}\left(c\right)$
+
+\[
+  \begin{tikzcd}[row sep = -0.1 cm]
+    \Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}} \arrow[rrr, "\Phi_{c,\fun{F}}"] & & & \fun{F}\left(c\right)  \\
+    \eta\colon\Yo\left(c\right)\Rightarrow\fun{F} \arrow[rrr,mapsto] & & & \eta_c\left(\Id{c}\right)
+\end{tikzcd}
+  \]
+
+  y definimos una segunda aplicación $\Theta_{c,\fun{F}}$ de $\fun{F}\left(c\right)$ a $\Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}}$ 
+
+  \[
+  \begin{tikzcd}[row sep = -0.1 cm]
+    \fun{F}\left(c\right) \arrow[rrr, "\Theta_{c,\fun{F}}"] & & & \Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}} \\
+    \theta \arrow[rrr,mapsto] & & & \eta_\theta \colon \Yo\left(c\right)\Rightarrow \fun{F}
+\end{tikzcd}
+  \]
+  Definimos la imagen de $\theta$ bajo $\Theta_{c,\fun{F}}$ como la transformación natural $\eta_\theta$, cuyos componentes son
+\[
+  \begin{tikzcd}[row sep = -0.1 cm]
+    \left(\eta_\theta\right)_e \colon \Mor{\mathsf{C}^\op}{e,c} \arrow[r] & \fun{F}\left(r\right) \\
+    g\colon e \rightarrow c \arrow[r,mapsto] & \fun{F}
+\end{tikzcd} 
+\]
+  Primero vamos a comprobar que $\eta_\theta$ esta bien definida como transformación natural, verificando que para cualquier $f\colon r \rightarrow e $ de $\mathsf{C}^\op$, el siguiente diagrama es conmutativo.
+
+  \[
+\begin{tikzcd}
+  \Mor{\mathsf{C}^\op}{r,c} \arrow[r,"\left(\eta_\theta\right)_r"] & \fun{F}\left(r\right) \\
+  \Mor{\mathsf{C}^\op}{e,c} \arrow[r, "\left(\eta_\theta\right)_e"] \arrow[u, "\Mor{\mathsf{C}^\op}{f,c}"] & \fun{F}\left(e\right) \arrow[u, "\fun{F}"]
+\end{tikzcd}
+  \]
+
+Para todo $g\in \Mor{\mathsf{C}^\op}{e,c}$ 
+
+  \begin{align*}
+    \left(\eta_\theta\right)_r\circ \Mor{\mathsf{C}^\op}{f,c}\left(g\right) &= \left(\eta_\theta\right)_r\left(g \circ f\right) \\ 
+      &= \fun{F}\left(g\circ f \right)\left(\theta\right) \\ 
+      &= \fun{F}\left(f\right)\circ \fun{F}\left(g\right)\left(\theta\right) \\ 
+      &= \fun{F} \circ \left(\eta_\theta\right)_e\left(g\right)
+  \end{align*}
+
+  El siguiente paso es comprobar que $\Phi_{c,\fun{F}}$ y $\Theta_{c,\fun{F}}$ son mutuamente inversos.
+
+
+ \[
+\begin{tikzcd}[row sep = -0.1 cm]
+\Mor{\Set^{\mathsf{C}^{\op}}}{\yo\left(c \right),\fun{F}} \arrow[rr,"\Phi_{c,\fun{F}}"] & & \fun{F}\left( c\right) \arrow[rr,"\Theta_{c,\fun{F}}"] & & \Mor{\Set^{\mathsf{C}^{\op}}}{\yo\left(c \right),\fun{F}} \\
+\eta \colon \yo\left( c\right) \Rightarrow \fun{F}  \arrow[rr,mapsto ] & & \eta_c\left(\Id{c} \right)=\theta  \arrow[rr,mapsto ] & & \eta_{\theta}\colon \Yo\left(c \right)\Rightarrow \fun{F}
+\end{tikzcd}
+\]
+  Por definición de $\eta\colon \Yo\left(c\right)\Rightarrow\fun{F}$ el siguiente diagrama es conmutativo
+
+  \[
+\begin{tikzcd}
+  \Mor{\mathsf{C}^\op}{c,c} \arrow[r,equal] \arrow[d, "\Mor{\mathsf{C}^\op}{g,c}"] & \Yo\left(c\right)\left(c\right) \arrow[d,"\Yo\left(c\right)\left(g\right)"] \arrow[r, "\eta_c"] & \fun{F}\left(c\right) \arrow[d, "\fun{F}\left(g\right)"]\\
+  \Mor{\mathsf{C}^\op}{e,c} \arrow[r,equal] & \Yo\left(c\right)\left(e\right) \arrow[r, "\eta_e"] & \fun{F}\left(e\right)
+\end{tikzcd}
+  \]
+
+De esta forma tenemos
+
+\begin{align*}
+  \left(\eta_\theta\right)_e\left(g\right) &= \fun{F}\left(g\right)\left(\theta\right) \\ 
+  &= \fun{F}\left(g\right)\left(\eta_c\left(\Id{c}\right)\right) \\ 
+  &= \eta_e \circ \Yo\left(c\right)\left(g\right)\left(\Id{c}\right) \\ 
+  &= \eta_e\left(g\right)
+\end{align*}
+
+Asi que $\eta_\theta=\eta$ por cualquier $\theta \in \fun{F}\left(c\right)$, por tanto $\Theta_{c,\fun{F}} \circ \Phi_{c,\fun{F}} = \Id{\Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}}}$.
+
+A continuación comprobamos el otro orden de composición.
+
+\[
+\begin{tikzcd}[row sep = -0.1 cm]
+  \fun{F}\left(c\right) \arrow[rr, "\Theta_{c,\fun{F}}"] & & \Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}} \arrow[rr, "\Phi_{c,\fun{F}}"] & & \fun{F}\left(c\right)  \\
+  \theta \arrow[rr,mapsto] & & \eta_\theta \colon \Yo\left(c\right) \Rightarrow \fun{F} \arrow[rr,mapsto] & & \left(\eta_\theta\right)_c\left(\Id{c}\right)
+\end{tikzcd}
+\]
+
+\begin{align*}
+  \left(\eta_\theta\right)_c\left(\Id{c}\right) &= \fun{F}\left(\Id{c}\right)\left(\theta\right) \\ 
+  &= \Id{\fun{F}\left(c\right)}\left(\theta\right) \\ 
+  &= \theta
+\end{align*}
+
+Finalmente podemos concluir que $\Phi_{c,\fun{F}}\circ \Theta_{c,\fun{F}}=\Id{\fun{F}\left(c\right)}$.
+
+Por tanto hemos demostrado que $\Phi_{c,\fun{F}}\colon \Mor{\Set^{\mathsf{C}^\op}}{\Yo\left(c\right),\fun{F}}\xrightarrow{\cong} \fun{F}\left(c\right)$ es un isomorfismo.
+
+
+Para finalizar la demostración nos falta demostrar la naturalidad en $\fun{F}$ y en $c \in \mathsf{C}$.
+
+
+Por cualquier functor $\fun{G}\colon \mathsf{C}^\op \rightarrow \Set$ y transformación natural $\alpha \colon \fun{F}\Rightarrow\fun{G}$,
+
+\[
+\left(\eta\colon \Yo\left(c\right)\Rightarrow\fun{F}\right)\in \Mor{}{\Yo\left(c\right),\fun{F}}
+\]
+\[
+\begin{tikzcd}
+  \Mor{}{\Yo\left(c\right),\fun{F}} \arrow[r, "\cong", "\Phi_{c,\fun{F}}"swap] \arrow[d, "\Mor{}{\Yo\left(c\right),\alpha}" swap,"\alpha\circ -"] & \fun{F}\left(c\right) \arrow[d, "\alpha_c"] \\
+  \Mor{}{\Yo\left(c\right),\fun{G}} \arrow[r, "\cong","\Phi_{c,\fun{G}}"swap] & \fun{G}\left(c\right)
+\end{tikzcd}
+\]
+
+Obtenemos 
+
+\begin{align*}
+  \left(\alpha_c \circ \Phi_{c,\fun{F}}\right)\left(\eta\right) &= \alpha_c\left(\eta_c\left(\Id{c}\right)\right) \\ 
+  &= \left(\alpha \circ \eta\right)_c\left(\Id{c}\right) \\ 
+  &= \Phi_{c,\fun{G}}\left(\Mor{}{\Yo\left(c\right),\alpha}\left(\eta\right)\right) 
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{proof}
+\end{theorem}
