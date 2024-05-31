@@ -192,13 +192,41 @@ Obtenemos
 \end{align*}
 
 
+Para la naturalidad en $c\in \mathsf{C}$, por cualquier $h\colon c \rightarrow d $
 
+\[
+\begin{tikzcd}
+  \omega \circ \Yo\left(h\right)\colon \Yo\left(c\right) \Rightarrow \fun{F} \arrow[rrr, mapsto] & & & \left(\omega \circ \Yo\left(h\right)\right)_c\left(\Id{c}\right) \\
+  & \Mor{}{\Yo\left(c\right),\fun{F}} \arrow[r, "\cong","\Phi_{c,\fun{F}}"swap] & \fun{F}\left(c\right) \\ 
+  &  \Mor{}{\Yo\left(d\right),\fun{F}} \arrow[r, "\cong","\Phi_{d,\fun{F}}"swap] \arrow[u, "-\circ \Yo\left(h\right)"swap,"\Mor{}{\Yo\left(h\right),\fun{F}}"] & \fun{F}\left(d\right) \arrow[u, "\fun{F}\left(h\right)"] \\ 
+  \omega \colon \Yo\left(d\right) \Rightarrow \fun{F}  \arrow[rrr,mapsto] \arrow[uuu,mapsto] & & & \omega_d\left(\Id{d}\right) 
+\end{tikzcd}
+\]
 
+\begin{align*}
+  \Phi_{c,\fun{F}}\circ\Mor{}{\Yo\left(h\right),\fun{F}}\left(\omega\right)  &= \Phi_{c,\fun{F}}\left(\omega\circ \Yo\left(h\right)\right) \\ 
+  &= \left(\omega \circ \Yo\left(h\right)\right)_c \left(\Id{c}\right) \\ 
+  &= \omega_c\left(\Yo\left(h\right)_c\left(\Id{c}\right)\right) \\ 
+  &= \omega_c \left(h\circ\Id{c}\right) \\ 
+  &= \omega_c \left(h\right) \\ 
+  &= \omega_c \left(\Id{d}\circ h\right) \\ 
+  &= \omega_c\left(\Yo\left(d\right)\left(h\right)\left(\Id{d}\right)\right) \\ 
+  &= \fun{F}\left(h\right) \circ \omega_d\left(\Id{d}\right) \\ 
+  &= \fun{F}\left(h\right) \circ \Phi_{d,\fun{F}}\left(\omega\right)
+\end{align*}
 
+La ecuación anterior a la última es consecuencia de 
 
+\[
+\begin{tikzcd}
+  \Yo\left(d\right)\left(d\right) \arrow[r, "\omega_d"] \arrow[d, "\Yo\left(d\right)\left(h\right)"] & \fun{F}\left(d\right) \arrow[d, "\fun{F}\left(h\right)"] \\
+  \Yo\left(d\right)\left(c\right) \arrow[r, "\omega_c"] & \fun{F}\left(d\right)
+\end{tikzcd}
+\]
 
+Finalizamos la demostración con $\Phi_{c,\fun{F}} \circ \Mor{}{\Yo\left(h\right),\fun{F}}=\fun{F}\left(h\right)\circ \Phi_{d,\fun{F}}$
 
-
+\subsection{Lema de Yoneda aplicado a los $\sSet$} 
 
 
 
