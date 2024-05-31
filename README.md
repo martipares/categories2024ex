@@ -6,6 +6,10 @@
 
 # [Categorías 2024 Web](https://sites.google.com/view/categorias-uma-uab/Bienvenida?authuser=0)
 
+# [Categorías 2024 Calendario](https://sites.google.com/view/categorias-uma-uab/Sesiones?authuser=0)
+
+# [Categorías 2024 Youtube](https://www.youtube.com/@SemCat2024)
+
 # Categorías 2024 Ejercicios
 
 
