@@ -2,7 +2,7 @@
 
 Añadir Bibliografia.
 
-Actualizar la lista de sesiones.
+
 
 Ej sesion 1
 
@@ -20,3 +20,5 @@ Ej sesion 6
 # Tascas completadas
 
 Completar demostracion lema de Yoneda.
+
+Actualizar la lista de sesiones.
