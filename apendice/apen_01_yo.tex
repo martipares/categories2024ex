@@ -1,4 +1,4 @@
-Esta es la traducción del apartado dedicado al lema de Yoneda en mi TFG\footnote{Intrducció a les Categories de Models en Topologia (Martí Parés Baraldés) con Carles Broto Blanco como tutor} donde se demuestra la vercion contravariante del lema de Yoneda usando la sumersión de Yoneda. 
+Esta es la traducción del apartado dedicado al lema de Yoneda en mi TFG\footnote{Intrducció a les Categories de Models en Topologia (Martí Parés Baraldés) con Carles Broto Blanco como tutor} donde se demuestra la vercion contravariante del lema de Yoneda usando la sumersión de Yoneda. Si alguien esta interesado por mi TFG (aviso esta en catalán) o los recusas usados pónganse en contacto (martiparesmath arroba gmail punto com)
 
 \begin{definition}\label{def:diagCat}
   Dada una categoría localmente pequeña $\mathsf{C}$. Definimos la categoría de diagramas $\Set^{\mathsf{C}}$ donde los objetos son functores de $\mathsf{C}$ a $\Set$ y los morfismos son transformaciones naturales de entre estos functores.
@@ -226,10 +226,32 @@ La ecuación anterior a la última es consecuencia de
 
 Finalizamos la demostración con $\Phi_{c,\fun{F}} \circ \Mor{}{\Yo\left(h\right),\fun{F}}=\fun{F}\left(h\right)\circ \Phi_{d,\fun{F}}$
 
+\end{proof}
+\end{theorem}
+
 \subsection{Lema de Yoneda aplicado a los $\sSet$} 
 
 
+Mi comentario en la sesión 6 trataba explicar un uso del lema de Yoneda en la categoría de conjuntos simpliciales.
+Dada la categoría de los conjuntos finitos completamente ordenados $\DDelta$ la categoría formada por los functores $\fun{F}\colon \DDelta^\op \rightarrow \Set $ se llama $\sSet$ los elementos de $\sSet$ también se pude caracterizar por la imagen de dicho functor donde $\fun{F}_n=\fun{F}\left(n\right)$ por cada $n$ de $\DDelta$ (creo que dicha imagen es una categoría pero no lo pude justificar).
 
 
-\end{proof}
-\end{theorem}
+Simplificándolo mucho la idea, partiendo de los complejos simpliciales geométricos, como agrupaciones de ''triángulos`` $n$-dimensionales, abstraes a un ida puramente combinatoria llamada complejos simpliciales y finalmente abstraes los complejos simpliciales a una ida categórica llamada conjuntos simpliciales o $\sSet$.
+
+Al aplicar la sumersión de Yoneda \ref{def:Yo} tenemos que 
+\[
+\Yo_\DDelta \colon \DDelta \rightarrow \sSet 
+\]
+si hora aplicaos el lema de Yoneda \ref{theo:Yo} tenemos que dados $X\in \sSet$ y $n\in\DDelta$
+\[
+\Mor{\sSet}{\Yo\left(n\right),X} \cong X\left(n\right)
+\]
+donde $\Yo\left(n\right)$ es el equivalente categórico al $n$-símplex geométrico estándar y $X\left(n\right)$ de forma similar a la nomenclatura usada en los complejos simpliciales lo llamaremos $X_n$ como versión categórica del conjunto de $n$-caras de los complejos simpliciales, de forma que obtenemos 
+
+\[
+\Mor{\sSet}{\DDelta^n,X} \cong X_n
+\]
+Si trasladamos este resultado al los complejos simpliciales geométricos nos vendría a decir que el conjunto de aplicaciones continuas entre el $n$-símplex geométrico estándar y un complejo simplicial geométrico es isomorfo al conjunto de $n$-caras.
+
+
+

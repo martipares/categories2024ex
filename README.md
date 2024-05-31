@@ -59,7 +59,11 @@ Lista de ejercicios: 2.2.iv, 2.2.v, 2.2.vi, 2.2.viii.
 
 
 # Sesión 7
-2024-06-
+2024-06-04
+
+Lectura recomendada: Secciones 2.3 y 2.4 de [R16].
+
+Lista de ejercicios: 2.3.i., 2.3.ii., 2.4.i, 2.4.ii, 2.4.iv, 2.4.vii, 2.4.viii.
 
 
 # Como Contribuir al LaTeX
