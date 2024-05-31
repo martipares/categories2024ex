@@ -1,15 +1,13 @@
 
 
-# [Ejercicios](https://github.com/martipares/categories2024ex/blob/main/Ejercicios.pdf)
+# [Ejercicios PDF](https://github.com/martipares/categories2024ex/blob/main/Ejercicios.pdf)
 
-# [Apéndice](https://github.com/martipares/categories2024ex/blob/main/apendice.pdf)
+# [Apéndice PDF](https://github.com/martipares/categories2024ex/blob/main/apendice.pdf)
 
-
+# [Categorías 2024 Web] (https://sites.google.com/view/categorias-uma-uab/Bienvenida?authuser=0)
 
 # Categorías 2024 Ejercicios
 
-
-https://sites.google.com/view/categorias-uma-uab/Bienvenida?authuser=0
 
 
 # Sesión 1  
@@ -44,9 +42,9 @@ Lectura recomendada: Sección 1.5 de [R16], subsección 2.1.1 de V. Muñoz et al
 
 Lectura recomendada: Sección 2.1 de [R16].
 
-Lista de ejercicios: Los de la sección 2.1. Aparte, en esta lista encontraréis ejercicios adicionales relacionados con las preguntas que han surgido a lo largo del seminario. Por otro lado, pensaremos qué propiedad universal verifican las representaciones de un functor.
+Lista de ejercicios: Los de la sección 2.1. Aparte, en esta [lista](https://drive.google.com/file/d/1czX5pz7UBUCK1PBvdKEApN8LClhzQdvL/view) encontraréis ejercicios adicionales relacionados con las preguntas que han surgido a lo largo del seminario. Por otro lado, pensaremos qué propiedad universal verifican las representaciones de un functor.
 
-https://drive.google.com/file/d/1czX5pz7UBUCK1PBvdKEApN8LClhzQdvL/view
+
 
 # Sesión 6
 2024-05-28
@@ -130,14 +128,14 @@ Ya que cambios en el documento "notation" (newcommand en general) muy fácilment
 
 Como vamos a escribir muchos diagramas conmutativos recomiendo usar tikz-cd.
 
-https://ctan.fisiquimicamente.com/graphics/pgf/contrib/tikz-cd/tikz-cd-doc.pdf
+[documentacion oficial](https://ctan.fisiquimicamente.com/graphics/pgf/contrib/tikz-cd/tikz-cd-doc.pdf)
 
 Por cualquier duda o problema no duden en contactarme.
 
 # Recordatorio de LaTeX 
 
-En el siguiente enlace se encurta un reclinatorio de todos los símbolos (algunos requerirán de paquetes adicionales).
-https://ctan.fisiquimicamente.com/info/symbols/comprehensive/symbols-a4.pdf
+En el siguiente enlace se encurta un [recopilatorio de todos los símbolos](https://ctan.fisiquimicamente.com/info/symbols/comprehensive/symbols-a4.pdf) (algunos requerirán de paquetes adicionales).
+
 
 En esta sección se añadirán instrucciones útiles que necesitaremos con frecuencia.
 
@@ -154,7 +152,7 @@ En esta sección se añadirán instrucciones útiles que necesitaremos con frecu
 # Que programas uso:
 TeXLive 2024 (actualizado)
 
-Neovim + Lazyvim con los extras para Tex
+Neovim + Lazyvim con los extras para Tex y luasnip
 
-Con varios Snippets para LuaSinp que se pueden encontrar en otro repositorio de esta misma cuenta de GitHub.
+Con varios Snippets para LuaSinp que se pueden encontrar en otro [repositorio](https://github.com/martipares/latex_p02) de esta misma cuenta de GitHub.
 
