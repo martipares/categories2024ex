@@ -4,7 +4,7 @@
 
 # [Apéndice PDF](https://github.com/martipares/categories2024ex/blob/main/apendice.pdf)
 
-# [Categorías 2024 Web] (https://sites.google.com/view/categorias-uma-uab/Bienvenida?authuser=0)
+# [Categorías 2024 Web](https://sites.google.com/view/categorias-uma-uab/Bienvenida?authuser=0)
 
 # Categorías 2024 Ejercicios
 
@@ -154,5 +154,5 @@ TeXLive 2024 (actualizado)
 
 Neovim + Lazyvim con los extras para Tex y luasnip
 
-Con varios Snippets para LuaSinp que se pueden encontrar en otro [repositorio](https://github.com/martipares/latex_p02) de esta misma cuenta de GitHub.
+Con varios Snippets para LuaSinp que se pueden encontrar en otro [repositorio](https://github.com/martipares/LuaSnip_01) de esta misma cuenta de GitHub.
 
